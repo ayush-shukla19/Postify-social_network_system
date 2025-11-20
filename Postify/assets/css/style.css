@@ -1,0 +1,220 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: #e9ecef;
+    margin: 0;
+    padding: 0;
+}
+
+/* Login/Signup Pages */
+.login-signup-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-container {
+    width: 90%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: center;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #e100ff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.msg {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.upload-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #d400ff;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Two-column layout */
+.profile-page {
+    display: flex;
+    gap: 20px;
+    width: 95%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* Left Column: Profile */
+.profile-left {
+    flex: 0 0 300px; /* Fixed width for profile */
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: sticky;
+    top: 20px;
+    height: 69vh;           /* scrollable if content overflows */
+    overflow-y: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.9);
+    text-align: center;
+}
+#abc{
+    text-align: left;
+}
+#abcd{
+    margin: 1px;
+}
+.profile-left img {
+    width: 80px;           /* bigger, like reference */
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1px;
+    border: 3px solid #285902; /* optional: nice border */
+}
+
+.profile-left input, .profile-left button {
+    width: 97%;
+    margin: 2px 0;
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Right Column: Posts */
+.profile-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    max-height: 100vh; /* allows independent scrolling */
+}
+
+/* New post form */
+.new-post-form textarea {
+    width: 92%;
+    min-height: 60px;
+    padding: 10px;
+    margin-bottom: 8px;
+    resize: vertical;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.new-post-form input,
+.new-post-form button {
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 95%;
+}
+
+/* Posts */
+.post-card {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.post-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+/* Horizontal Like/Dislike/Delete buttons */
+.post-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.post-actions button {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background: #007bff;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.post-actions button:hover {
+    background: #0056b3;
+}
+
+.post-actions .delete-post {
+    background: #dc3545;
+}
+
+.post-actions .delete-post:hover {
+    background: #a71d2a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-page {
+        flex-direction: column;
+    }
+    .profile-right {
+        width: 100%;
+        flex: 1 1 100%;
+        position: relative;
+        top: 0;
+        height: auto;
+        overflow-y: visible;
+    }
+    .profile-left {
+        width: 10%;
+        flex: 1 1 100%;
+        position: relative;
+        top: 10;
+        height: 20%;
+        overflow-y: visible;
+    }
+    .post-actions {
+        flex-direction: column; /* stack buttons vertically on mobile */
+    }
+}
